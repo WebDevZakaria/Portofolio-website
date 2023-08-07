@@ -1,0 +1,157 @@
+.services__container{
+    grid-template-columns: repeat(2,max-content);
+    justify-content: center;
+    align-items: center;
+    column-gap: 9rem;
+
+}
+
+
+
+.services__content{
+    position: relative;
+    border:1px solid rgba(0,0,0,0.1);
+    
+    padding: 4rem 0 2rem 1rem;    
+    border-radius: 2.5rem;
+    height: 370px;
+    width: 30px;
+    margin-left: 0;
+    
+
+}
+
+
+.services__icon{
+
+    display: block;
+    font-size: 2rem;
+    color: var(--title-color);
+    margin-bottom: var(--mb-1);
+
+}
+
+.services__title{
+    font-size: 24px;
+    margin-bottom:1px;
+    font-weight: var(--font-medium);
+    text-align: center;
+    padding:1px;
+}
+
+
+.services__modal{
+    
+    left: 0;
+    display: flex;
+    padding: 1rem 0 ;
+   
+
+}
+
+
+
+.services__modal-content{
+
+    width: 500px;
+    position: relative;
+  
+
+}
+
+
+
+
+.services__modal-title,
+.services__modal-description{
+    text-align: center;
+}
+
+
+
+.services__modal-description
+{
+    font-size: var(--small-font-size);
+    padding: 0 6.5rem;
+    margin-bottom: var(--mb-2);
+    align-items: center;
+    justify-content: center;
+
+
+}
+.services__modal-services{
+    row-gap: 0.75rem;
+    margin-top: 77px;
+
+
+}
+
+.services__modal-service{
+   display: flex; 
+   align-items: center;
+   column-gap: .5rem;
+   margin-bottom: 1.5rem;
+
+}
+
+.services__modal-icon{
+
+    color:var(--title-color)  ;
+    font-size: 1.1rem;
+
+}
+
+.services__modal-info{
+    font-size: 17px;
+    color: black;
+
+}
+
+
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .autoplay-progress {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--swiper-theme-color);
+  }
+  
+  .autoplay-progress svg {
+    --progress: 0;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    stroke-width: 4px;
+    stroke: var(--swiper-theme-color);
+    fill: none;
+    stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+    stroke-dasharray: 125.6;
+    transform: rotate(-90deg);
+  }
+  
