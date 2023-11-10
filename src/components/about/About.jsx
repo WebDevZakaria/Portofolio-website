@@ -3,18 +3,21 @@ import './about.css'
 
 import ZAKARIA from '../../assets/zakaria.png'
 import CV from '../../assets/FullStackCV.pdf'
+import WEBDEV from '../../assets/webdeve.jpg'
+//import video from '../../Video/developers.mp4'
+
+import INTRO from '../../Video/intro.mp4'
+
 import Info from './Info'
+
 function About() {
   return (
 
     <section className="about section" id="about">
-      <h2 className="section__title" style={{color:'white'}}>About Me </h2>
-      <span className="section__subtitle">
-         introduction
-      </span>
+     
       <div className="about__container container grid">
 
-        <img src={ZAKARIA} alt="" className="about__img" />
+        <video controls autostart autoPlay src={INTRO}  width='5800' height='12900'  type="video/mp4"   />
         <div className="about__data">
           <Info/>
           <p className="about__description">

@@ -5,11 +5,11 @@ import  "./home.css"
 import Social from './Social'
 import Data from './Data'
 import Scrolldown from './Scrolldown'
-import About from '../about/About'
 import Portofolio from '../Portofolio/Portofolio'
 import Skills from '../skills/Skills'
 import Header from '../header/Header'
 import Contact from '../contact/Contact'
+import Introduction from '../Intro/Introduction'
 
 const  Home=() => {
   return (
@@ -34,7 +34,8 @@ const  Home=() => {
         </div>
 
     </section>
-    <About />
+    <Introduction />
+
     <Skills />
     <Portofolio />
     <Contact />

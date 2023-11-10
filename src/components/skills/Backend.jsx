@@ -23,6 +23,15 @@ function Backend() {
                     </h3>
                 </div>
                 </div>
+                <div className="skills__data">
+                <i class='bx bxl-docker' ></i>
+                <div>
+                    <h3 className="skills__name">
+                     Docker                    
+                    </h3>
+                </div>
+                </div>
+
 
 
 
