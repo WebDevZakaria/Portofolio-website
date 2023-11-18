@@ -22,6 +22,27 @@ import CONNECT from '../../assets/connect.png'
 import COMMERCEE from '../../assets/reactcommerce.png'
 import OPENTABLE from '../../assets/restu.png'
 
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import IconButton from '@mui/material/IconButton';
+//import CloseIcon from '@mui/icons-material/Close';
+import Typography from '@mui/material/Typography';
+import ECOMMERCEVIDEO from '../../Video/ecommerceVideo.mp4'
+
+
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  '& .MuiDialogContent-root': {
+    padding: theme.spacing(2),
+  },
+  '& .MuiDialogActions-root': {
+    padding: theme.spacing(1),
+  },
+}));
+
 
 
 
@@ -30,6 +51,15 @@ function Works() {
   const [item,setItem] = useState({name: 'All' });
   const [projects,setProjects] = useState([])
   const [active,setActive] = useState(0)
+  const [open, setOpen] = useState(false);
+  
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
 
 
   useEffect (()=>{
@@ -100,19 +130,57 @@ function Works() {
 
 <div className='work__card'>
 
-<Link to= '/'><img src={COMMERCEE} alt="" className='work__img' /> </Link>
+<Button onClick={handleClickOpen} ><img src={COMMERCEE} alt="" className='work__img' /> </Button>
+
+
+<BootstrapDialog
+        onClose={handleClose}
+        aria-labelledby="customized-dialog-title"
+        open={open}
+      >
+        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+         Django and React e-commerce website presentation
+        </DialogTitle>
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          
+        </IconButton>
+        <DialogContent dividers>
+          <Typography gutterBottom>
+          <video controls autostart autoPlay src={ECOMMERCEVIDEO}  width='5800' height='12900'  type="video/mp4" class="w-full"  />
+           
+          </Typography>
+          
+        </DialogContent>
+        <DialogActions>
+          <Button autoFocus onClick={handleClose}>
+            close
+          </Button>
+        </DialogActions>
+      </BootstrapDialog>
+
+
 <Link to= '/'><h3 className="work__title">E commerce Website</h3></Link>
 <h4 style={{fontSize:'12px',}}>i build this application with react js and djangorest</h4>
 <br/>
 <div  style={{display:'flex'}}>
-<a href='/' className="work__button">
-    Link <i className="bx bx-right-arrow-alt work__button-icon"></i>
-</a>
+<Link onClick={handleClickOpen} className="work__button">
+    Link<i className="bx bx-right-arrow-alt work__button-icon"></i>
+</Link>
 
 <a href='https://github.com/zikou24/Ecommerce' className='home__social-icon' target="_blank" style={{marginLeft:'15px',fontSize:'14px' ,color:'darkred'}}><i class="uil uil-github"></i> github repo </a>
 
 </div>
 </div>
+
 
 <div className='work__card'>
 
