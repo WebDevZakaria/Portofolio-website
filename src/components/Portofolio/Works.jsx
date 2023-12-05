@@ -32,6 +32,7 @@ import IconButton from '@mui/material/IconButton';
 //import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import ECOMMERCEVIDEO from '../../Video/ecommerceVideo.mp4'
+import PHONESTORE from '../../Video/phonestoreVideo.mp4'
 
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -51,7 +52,9 @@ function Works() {
   const [item,setItem] = useState({name: 'All' });
   const [projects,setProjects] = useState([])
   const [active,setActive] = useState(0)
+  const [active2,setActive2] = useState(0)
   const [open, setOpen] = useState(false);
+  const [open2, setOpen2] = useState(false);
   
   const handleClickOpen = () => {
     setOpen(true);
@@ -60,6 +63,12 @@ function Works() {
     setOpen(false);
   };
 
+  const handleClickOpen2 = () => {
+    setOpen2(true);
+  };
+  const handleClose2 = () => {
+    setOpen2(false);
+  };
 
 
   useEffect (()=>{
@@ -83,6 +92,12 @@ function Works() {
   const handleClick = (e,index)=>{
     setItem({name:e.target.textContent})
     setActive(index)
+
+  }
+
+  const handleClick2 = (e,index)=>{
+    setItem({name:e.target.textContent})
+    setActive2(index)
 
   }
 
@@ -118,7 +133,7 @@ function Works() {
 <h4 style={{fontSize:'12px',}}>i build all the backend for this application with django</h4>
 <br/>
 <div  style={{display:'flex'}}>
-<a href='https://web-production-0fe3.up.railway.app/' className="work__button">
+<a href='https://search-for-handymen.up.railway.app/' className="work__button">
     Link <i className="bx bx-right-arrow-alt work__button-icon"></i>
 </a>
 
@@ -216,14 +231,49 @@ function Works() {
 
 <div className='work__card'>
 
-<Link to= '/phoneecommerce'><img src={PHONE} alt="" className='work__img' /> </Link>
-<Link to= '/phoneecommerce'><h3 className="work__title">E commerce Website for phone</h3></Link>
+<Button onClick={handleClickOpen2}><img src={PHONE} alt="" className='work__img' /> </Button>
+
+<BootstrapDialog
+        onClose={handleClose2}
+        aria-labelledby="customized-dialog-title"
+        open={open2}
+      >
+        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+         Django Phone Store  website presentation
+        </DialogTitle>
+        <IconButton
+          aria-label="close"
+          onClick={handleClose2}
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          
+        </IconButton>
+        <DialogContent dividers>
+          <Typography gutterBottom>
+          <video controls autostart autoPlay src={PHONESTORE}  width='5800' height='12900'  type="video/mp4" class="w-full"  />
+           
+          </Typography>
+          
+        </DialogContent>
+        <DialogActions>
+          <Button autoFocus onClick={handleClose2}>
+            close
+          </Button>
+        </DialogActions>
+      </BootstrapDialog>
+
+<Link to  =''><h3 className="work__title">E commerce Website for phone</h3></Link>
 <h4 style={{fontSize:'12px',}}>i build full e-commerce website using django</h4>
 <br/>
 <div  style={{display:'flex'}}>
-<a href='https://zaki123.pythonanywhere.com/' className="work__button">
+<Link onClick={handleClickOpen2} href='https://zaki123.pythonanywhere.com/' className="work__button">
     Link <i className="bx bx-right-arrow-alt work__button-icon"></i>
-</a>
+</Link>
 
 <a href='https://github.com/zikou24/Phoneapp' className='home__social-icon' target="_blank" style={{marginLeft:'15px',fontSize:'14px' ,color:'darkred'}}><i class="uil uil-github"></i> github repo </a>
 
